@@ -56,25 +56,19 @@ The system allows citizens to register for awareness programs such as Cyber Safe
 
 ## Installation
 
-1. Clone the repository
-
-```bash
-git clone https://github.com/yourusername/online-police-complaint-management.git
-```
-
-2. Install dependencies
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-3. Create MySQL database
+4. Create MySQL database
 
 ```sql
 CREATE DATABASE eventdb;
 ```
 
-4. Update MySQL credentials in server.js
+5. Update MySQL credentials in server.js
 
 ```javascript
 host: "localhost",
@@ -83,13 +77,13 @@ password: "your_password",
 database: "eventdb"
 ```
 
-5. Start the server
+6. Start the server
 
 ```bash
 node server.js
 ```
 
-6. Open in browser
+7. Open in browser
 
 ```text
 http://localhost:3000
