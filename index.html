@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>e-Police Station | Crime Reporting Portal</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="main-header">
+
+        <div class="container text-center">
+
+            <img src="images/logo.png" class="img-responsive center-block logo">
+
+            <h1>Online Crime Registration Portal</h1>
+
+            <p><strong>Ministry of Home Affairs | Govt. of India</strong></p>
+
+            <p><em>Emergency Contact: Dial 112</em></p>
+
+            <h4 id="timeDisplay"></h4>
+
+        </div>
+
+    </header>
+
+    <nav class="navbar navbar-inverse">
+
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">e-Police</a>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#complaint">Register Complaint</a></li>
+                    <li><a href="#status">Check Status</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="hero-banner text-center" id="home">
+
+        <div class="container">
+
+            <h2>Serving the Citizens 24/7</h2>
+
+            <p>Secure, Fast, and Transparent Crime Reporting</p>
+
+            <a href="#complaint" class="btn btn-success btn-lg">Register Complaint</a>
+
+        </div>
+
+    </section>
+
+    <section class="container about-section text-center" id="about">
+
+        <h2>About The Initiative</h2>
+
+        <p>This portal allows citizens to file complaints online easily and track progress securely.</p>
+
+    </section>
+
+    <section class="container text-center mt-20">
+
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-4 service-btn" id="cyberBtn">
+                <img src="images/thumb1.png" class="img-responsive img-thumbnail center-block">
+                <h4>Cyber Crime Cell</h4>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 service-btn" id="trafficBtn">
+                <img src="images/thumb2.png" class="img-responsive img-thumbnail center-block">
+                <h4>Traffic Assistance</h4>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 service-btn" id="legalBtn">
+                <img src="images/thumb3.png" class="img-responsive img-thumbnail center-block">
+                <h4>Legal Aid Services</h4>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="container">
+        <div id="serviceInfo" class="info-box text-center">
+            <p>Select a service above to see more information.</p>
+        </div>
+    </section>
+
+    <section class="container feature-section">
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <img src="images/feature1.png" class="img-responsive img-rounded">
+            </div>
+
+            <div class="col-md-6">
+                <h3>Instant e-FIR Registration</h3>
+                <p>File FIR instantly and track complaint status.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== EXISTING COMPLAINT FORM ===== -->
+
+    <section class="container form-section" id="complaint">
+
+        <h2 class="text-center">Complaint Registration</h2>
+
+        <form id="complaintForm">
+
+            <div class="row">
+
+                <div class="col-md-6 form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="fullName" class="form-control">
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" id="mobile" class="form-control">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <textarea id="address" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>District</label>
+                <select id="district" class="form-control">
+                    <option>Select District</option>
+                    <option>Central</option>
+                    <option>North</option>
+                    <option>South</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Complaint Details</label>
+                <textarea id="details" class="form-control"></textarea>
+                <p id="charCount"></p>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Register Complaint</button>
+                <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+            </div>
+
+        </form>
+
+    </section>
+
+    <!-- ===== STATUS ===== -->
+
+    <section class="container form-section" id="status">
+
+        <h2 class="text-center">Check Complaint Status</h2>
+
+        <input type="text" id="searchID" class="form-control" placeholder="Enter Complaint ID">
+
+        <br>
+
+        <div class="text-center">
+            <button id="checkStatus" class="btn btn-success">Check Status</button>
+        </div>
+
+        <h3 id="statusResult" class="text-center"></h3>
+
+    </section>
+
+    <!-- ===== HISTORY ===== -->
+
+    <section class="container form-section">
+        <h2 class="text-center">Complaint History</h2>
+        <ul id="historyList"></ul>
+    </section>
+
+    <!-- ===== EXPERIMENT 6 EVENTS ===== -->
+
+    <section class="container form-section">
+
+        <h2 class="text-center">Upcoming Events</h2>
+
+        <div class="event">
+            <h3>Cyber Safety Workshop</h3>
+            <p>Date: 10 April 2026</p>
+            <button class="toggleBtn btn btn-info">Show Details</button>
+            <div class="eventDetails" style="display:none;">
+                <p>Learn about cyber threats.</p>
+                <button class="registerBtn btn btn-success">Register</button>
+            </div>
+        </div>
+
+        <div class="event">
+            <h3>Traffic Awareness Program</h3>
+            <p>Date: 15 April 2026</p>
+            <button class="toggleBtn btn btn-info">Show Details</button>
+            <div class="eventDetails" style="display:none;">
+                <p>Road safety awareness.</p>
+                <button class="registerBtn btn btn-success">Register</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ===== REGISTRATION FORM ===== -->
+
+    <section class="container form-section">
+
+        <h2 class="text-center">Event Registration</h2>
+
+        <form id="eventForm">
+
+            <input type="text" id="pname" class="form-control" placeholder="Name"><br>
+            <input type="text" id="email" class="form-control" placeholder="Email"><br>
+            <input type="text" id="eventName" class="form-control" readonly><br>
+            <input type="text" id="mobileNum" class="form-control" placeholder="Mobile"><br>
+
+            <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
+            <button type="reset" id="resetBtn" class="btn btn-danger">Reset</button>
+
+            <p id="msg"></p>
+
+        </form>
+
+    </section>
+
+    <footer class="footer text-center">
+        <p>© 2026 State Police Department</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
