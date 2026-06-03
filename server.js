@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "chandu13", // 👉 put your MySQL password
+  password: "YOUR_PASSWORD", // 👉 put your MySQL password
   database: "eventdb"
 });
 
